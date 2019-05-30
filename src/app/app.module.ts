@@ -1,3 +1,4 @@
+import { CategoryService } from './services/category.service';
 import { AdminAuthGuardService as AdminAuthGuard } from './admin-auth-guard.service';
 import { UserService } from './user.service';
 import { AuthGuardService as AuthGuard } from './auth-guard.service';
@@ -24,6 +25,7 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { ProductsComponent } from './products/products.component';
+import { ProductFormComponent } from './admin/product-form/product-form.component';
 
 
 @NgModule({
@@ -38,7 +40,8 @@ import { ProductsComponent } from './products/products.component';
     ProductsComponent,
     AdminProductsComponent,
     AdminOrdersComponent,
-    LoginComponent
+    LoginComponent,
+    ProductFormComponent
   ],
   imports: [
     AppRoutingModule,
@@ -50,8 +53,14 @@ import { ProductsComponent } from './products/products.component';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     NgbModule.forRoot()
+  ], 
+  providers: [
+    AdminAuthGuard, 
+UserService, 
+AuthenticationService, 
+AuthGuard,
+    CategoryService
   ],
-  providers: [AdminAuthGuard, UserService, AuthenticationService, AuthGuard],
-  bootstrap: [AppComponent]
+ bootstrap: [AppComponent]
 })
 export class AppModule { }
