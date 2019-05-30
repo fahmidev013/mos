@@ -1,0 +1,51 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "prod_name": "Sebastian",
+      "prod_desc": "sebastian@codingthesmartway.com",
+      "prod_price": 33,
+      "updated_at": "30 Aug, 2018"
+    },
+    {
+      "id": 3,
+      "prod_name": "Ann",
+      "prod_desc": "ann@codingthesmartway.com",
+      "prod_price": 99,
+      "updated_at": "30 Aug, 2018"
+    },
+    {
+      "id": 4,
+      "prod_name": "Andi",
+      "prod_desc": "andi@codingthesmartway.com",
+      "prod_price": 87,
+      "updated_at": "25 Aug, 2018"
+    },
+    {
+      "id": "5",
+      "prod_name": "Yaya",
+      "prod_desc": "adalah",
+      "prod_price": "585",
+      "updated_at": null
+    },
+    {
+      "prod_name": "Memet",
+      "prod_desc": "aluuuss bangeeettt",
+      "prod_price": "2554",
+      "id": "6"
+    },
+    {
+      "id": "7",
+      "prod_name": "Compact",
+      "prod_desc": "sajajjsadaklshlaksh",
+      "prod_price": "356",
+      "updated_at": null
+    },
+    {
+      "prod_name": "yoyo masook",
+      "prod_desc": "mainan anak",
+      "prod_price": "16",
+      "id": "8"
+    }
+  ]
+}
