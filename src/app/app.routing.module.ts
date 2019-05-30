@@ -26,8 +26,17 @@ const routes: Routes = [
         component: ShoppingCartComponent
     },
     {
+        path: 'login',
+        component: LoginComponent
+    },
+
+
+
+
+    {
         path: 'my-orders',
-        component: MyOrdersComponent
+        component: MyOrdersComponent,
+        canActivate: [AuthGuardService]
     },
     {
         path: 'check-out',
@@ -36,19 +45,22 @@ const routes: Routes = [
     },
     {
         path: 'order-success',
-        component: OrderSuccessComponent
+        component: OrderSuccessComponent,
+        canActivate: [AuthGuardService]
     },
-    {
-        path: 'login',
-        component: LoginComponent
-    },
+
+
+
+
     {
         path: 'admin/products',
-        component: AdminProductsComponent
+        component: AdminProductsComponent,
+        canActivate: [AuthGuardService]
     },
     {
         path: 'admin/orders',
-        component: AdminOrdersComponent
+        component: AdminOrdersComponent,
+        canActivate: [AuthGuardService]
     }
 ]
 
