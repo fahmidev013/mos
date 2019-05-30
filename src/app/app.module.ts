@@ -1,3 +1,4 @@
+import { AdminAuthGuardService as AdminAuthGuard } from './admin-auth-guard.service';
 import { UserService } from './user.service';
 import { AuthGuardService as AuthGuard } from './auth-guard.service';
 import { AuthenticationService } from './auth.service';
@@ -50,7 +51,7 @@ import { ProductsComponent } from './products/products.component';
     AngularFireAuthModule,
     NgbModule.forRoot()
   ],
-  providers: [UserService, AuthenticationService, AuthGuard],
+  providers: [AdminAuthGuard, UserService, AuthenticationService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
