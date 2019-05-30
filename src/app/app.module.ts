@@ -1,3 +1,4 @@
+import { ProductService } from './services/product.service';
 import { CategoryService } from './services/category.service';
 import { AdminAuthGuardService as AdminAuthGuard } from './admin-auth-guard.service';
 import { UserService } from './user.service';
@@ -49,18 +50,10 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule,
-    AngularFireAuthModule,
-    NgbModule.forRoot()
-  ], 
-  providers: [
-    AdminAuthGuard, 
-UserService, 
-AuthenticationService, 
-AuthGuard,
-    CategoryService
-  ],
- bootstrap: [AppComponent]
+    AngularFireModule.initializeApp(environment.firebase), AngularFireDatabaseModule, AngularFireAuthModule,
+        NgbModule.forRoot()], 
+
+  providers: [ AdminAuthGuard, UserService, AuthenticationService, AuthGuard, CategoryService, ProductService], 
+  bootstrap: [ AppComponent ]  
 })
 export class AppModule { }
