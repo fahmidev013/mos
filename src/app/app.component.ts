@@ -15,11 +15,15 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.authSvr.user$.subscribe(user => {
-      if (user) {
-        this.userSvrc.save(user);
-        let returnUrl = localStorage.getItem('returnUrl');
-        this.router.navigateByUrl(returnUrl);
-      }
+      if (!user) return;
+      this.userSvrc.save(user);
+      let returnUrl = localStorage.getItem('returnUrl');
+
+      if (!returnUrl) return;
+      localStorage.removeItem('returnUrl');
+      this.router.navigateByUrl(returnUrl);
+
+
     });
   }
 

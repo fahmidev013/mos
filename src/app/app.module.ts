@@ -28,6 +28,8 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { ProductsComponent } from './products/products.component';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 
+import { DataTableModule } from '@ismatjon/angular-data-table';
+
 
 @NgModule({
   declarations: [
@@ -50,10 +52,11 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    DataTableModule, 
     AngularFireModule.initializeApp(environment.firebase), AngularFireDatabaseModule, AngularFireAuthModule,
         NgbModule.forRoot()], 
 
-  providers: [ AdminAuthGuard, UserService, AuthenticationService, AuthGuard, CategoryService, ProductService], 
+  providers: [ AdminAuthGuard, UserService, AuthenticationService, AuthGuard, CategoryService, ProductService],  
   bootstrap: [ AppComponent ]  
 })
 export class AppModule { }

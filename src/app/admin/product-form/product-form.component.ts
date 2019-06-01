@@ -1,3 +1,4 @@
+import { Product } from '../../models/product';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProductService } from './../../services/product.service';
 import { CategoryService } from './../../services/category.service';
@@ -13,7 +14,7 @@ import { take } from 'rxjs/operators';
 export class ProductFormComponent implements OnInit {
 
   categories$: Observable<any>;
-  product?= {};
+  product?= <Product>{};
   id;
 
   constructor(

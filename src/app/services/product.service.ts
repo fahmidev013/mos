@@ -1,3 +1,5 @@
+
+import { Product } from '../models/product';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
@@ -15,16 +17,25 @@ export class ProductService {
   }
 
 
+
   getAll() {
     return this.db.list('/products')
       .snapshotChanges()
-      .pipe(map(changes => {
-        return changes
-          .map(c => ({
-            key: c.payload.key, ...c.payload.val()
-          }));
-      }));
+      .pipe(map(changes =>
+        changes.map(a => ({ key: a.payload.key, ...a.payload.val() }))
+      ));
   }
+
+  // getAll() {
+  //   return this.db.list('/products')
+  //     .snapshotChanges()
+  //     .pipe(map(changes => {
+  //       return changes
+  //         .map(c => ({
+  //           key: c.payload.key, ...c.payload.val()
+  //         }));
+  //     }));
+  // }
 
 
   get(productId) {
