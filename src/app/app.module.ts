@@ -29,6 +29,8 @@ import { ProductsComponent } from './products/products.component';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 
 import { DataTableModule } from '@ismatjon/angular-data-table';
+import { ProductFilterComponent } from './products/product-filter/product-filter.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { DataTableModule } from '@ismatjon/angular-data-table';
     AdminProductsComponent,
     AdminOrdersComponent,
     LoginComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    ProductFilterComponent,
+    ProductCardComponent
   ],
   imports: [
     AppRoutingModule,

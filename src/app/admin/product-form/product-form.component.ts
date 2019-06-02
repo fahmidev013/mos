@@ -14,7 +14,7 @@ import { take } from 'rxjs/operators';
 export class ProductFormComponent implements OnInit {
 
   categories$: Observable<any>;
-  product?= <Product>{};
+  product?: Product;
   id;
 
   constructor(
@@ -26,13 +26,13 @@ export class ProductFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.categories$ = this.categoryService.getCategories();
+    this.categories$ = this.categoryService.getAll();
     this.id = this.route.snapshot.paramMap.get('id');
     if (this.id) {
       this.productService.get(this.id)
         .pipe(take(1))
         .subscribe(p => {
-          return this.product = p;
+          return this.product = p as Product;
         });
     }
   }

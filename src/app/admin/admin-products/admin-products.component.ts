@@ -13,7 +13,7 @@ import { DataTableResource } from '@ismatjon/angular-data-table';
 })
 export class AdminProductsComponent implements OnInit, OnDestroy {
 
-  products: any[];
+  products: Product[];
   filteredProducts: any[];
   subscription: Subscription;
   tableResource: DataTableResource<Product>;
@@ -56,8 +56,8 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription = this.productSvc.getAll()
       .subscribe(products => {
-        this.filteredProducts = this.products = products;
-        this.initializeTable(products);
+        this.filteredProducts = this.products = products as Product[];
+        this.initializeTable(products as Product[]);
       })
   }
 

@@ -1,6 +1,5 @@
 import { Product } from './../models/product';
 import { ActivatedRoute } from '@angular/router';
-import { CategoryService } from './../services/category.service';
 import { ProductService } from './../services/product.service';
 import { Component, OnInit } from '@angular/core';
 import { switchMap } from 'rxjs/operators';
@@ -16,17 +15,17 @@ export class ProductsComponent {
   products?: Product[] = [];
   filteredProducts?: Product[] = [];
 
-  categories$;
+
   category: string;
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService, private catService: CategoryService) {
+    private productService: ProductService) {
 
     productService
       .getAll()
       .pipe(switchMap(productsRes => {
-        this.products = productsRes;
+        this.products = productsRes as Product[];
         return route.queryParamMap;
       }))
       .subscribe(params => {
@@ -36,7 +35,7 @@ export class ProductsComponent {
           this.products;
       });
 
-    this.categories$ = catService.getAll();
+
 
 
   }
